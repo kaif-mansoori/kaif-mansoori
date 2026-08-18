@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mansoori Mohd Kaif — Cloud & DevOps Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0D12;
+    --bg-panel:#10151C;
+    --bg-panel2:#141A22;
+    --border:#1E2630;
+    --border-bright:#2A3542;
+    --teal:#2DD4BF;
+    --teal-dim:#1A8F81;
+    --amber:#F5A623;
+    --text:#E8EDF2;
+    --muted:#7C8797;
+    --muted2:#4E5866;
+    --mono:'IBM Plex Mono', monospace;
+    --sans:'Inter', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    overflow-x:hidden;
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(45,212,191,0.06), transparent 40%),
+      radial-gradient(circle at 85% 30%, rgba(245,166,35,0.05), transparent 40%),
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size:auto, auto, 48px 48px, 48px 48px;
+  }
+  ::selection{background:var(--teal);color:#001410;}
+  a{color:inherit;text-decoration:none;}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 6vw;
+    background:rgba(10,13,18,0.7);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  .logo{font-family:var(--mono);font-weight:600;font-size:15px;color:var(--text);}
+  .logo span{color:var(--teal);}
+  .nav-links{display:flex;gap:32px;font-family:var(--mono);font-size:13px;color:var(--muted);}
+  .nav-links a{transition:color .2s;position:relative;}
+  .nav-links a:hover{color:var(--teal);}
+  .nav-links a::before{content:'./';color:var(--muted2);}
+  @media(max-width:720px){.nav-links{display:none;}}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;
+    display:flex;align-items:center;
+    padding:120px 6vw 60px;
+    gap:60px;
+    perspective:1400px;
+  }
+  .hero-left{flex:1;min-width:300px;}
+  .hero-right{flex:1;min-width:280px;display:flex;justify-content:center;}
+  .term-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--mono);font-size:12px;color:var(--teal);
+    border:1px solid var(--teal-dim);border-radius:20px;
+    padding:5px 14px;margin-bottom:24px;
+    background:rgba(45,212,191,0.05);
+  }
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 1.6s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+  h1.headline{
+    font-family:var(--mono);
+    font-size:clamp(32px,5vw,58px);
+    font-weight:700;
+    line-height:1.15;
+    letter-spacing:-1px;
+    margin-bottom:18px;
+  }
+  h1.headline .cursor{
+    display:inline-block;width:14px;height:0.9em;background:var(--teal);
+    animation:blink 1s step-end infinite;vertical-align:text-bottom;margin-left:4px;
+  }
+  @keyframes blink{50%{opacity:0;}}
+  .headline .fn{color:var(--muted2);}
+  .headline .name{color:var(--text);}
+  .headline .quote{color:var(--amber);}
+
+  .sub{
+    font-family:var(--sans);
+    font-size:17px;color:var(--muted);
+    max-width:520px;line-height:1.6;margin-bottom:32px;
+  }
+  .sub b{color:var(--text);font-weight:600;}
+
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
+  .btn{
+    font-family:var(--mono);font-size:13px;font-weight:600;
+    padding:12px 22px;border-radius:6px;
+    display:inline-flex;align-items:center;gap:8px;
+    transition:transform .2s, box-shadow .2s, background .2s;
+    cursor:pointer;
+  }
+  .btn-primary{background:var(--teal);color:#001410;}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,212,191,0.25);}
+  .btn-outline{border:1px solid var(--border-bright);color:var(--text);}
+  .btn-outline:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px);}
+
+  .term-mini{
+    font-family:var(--mono);font-size:12.5px;color:var(--muted);
+    border-left:2px solid var(--border-bright);padding-left:14px;
+    display:flex;flex-direction:column;gap:4px;
+  }
+  .term-mini .ok{color:var(--teal);}
+
+  /* ---------- 3D ISOMETRIC STACK ---------- */
+  .iso-wrap{
+    width:380px;height:380px;
+    perspective:1000px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .iso-stack{
+    position:relative;
+    width:220px;height:220px;
+    transform-style:preserve-3d;
+    transform:rotateX(55deg) rotateZ(45deg);
+    transition:transform .15s ease-out;
+  }
+  .iso-layer{
+    position:absolute;
+    width:220px;height:220px;
+    border:1px solid var(--border-bright);
+    border-radius:10px;
+    backdrop-filter:blur(4px);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:1px;
+    box-shadow:0 0 0 1px rgba(255,255,255,0.02) inset;
+  }
+  .iso-layer span{transform:rotateZ(-45deg) rotateX(-55deg);white-space:nowrap;}
+  .l1{background:rgba(45,212,191,0.10);color:var(--teal);transform:translateZ(0px);}
+  .l2{background:rgba(245,166,35,0.10);color:var(--amber);transform:translateZ(40px);}
+  .l3{background:rgba(139,148,255,0.10);color:#8B94FF;transform:translateZ(80px);}
+  .l4{background:rgba(232,237,242,0.08);color:var(--text);transform:translateZ(120px);}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:100px 6vw;max-width:1180px;margin:0 auto;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:48px;}
+  .sec-num{font-family:var(--mono);color:var(--teal);font-size:13px;}
+  .sec-title{font-family:var(--mono);font-size:26px;font-weight:600;}
+  .sec-rule{flex:1;height:1px;background:linear-gradient(90deg,var(--border-bright),transparent);}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  /* ---------- ABOUT / TERMINAL WINDOW ---------- */
+  .term-window{
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 20px 60px rgba(0,0,0,0.35);
+  }
+  .term-bar{
+    display:flex;align-items:center;gap:8px;
+    padding:12px 16px;background:var(--bg-panel2);
+    border-bottom:1px solid var(--border);
+  }
+  .tb-dot{width:11px;height:11px;border-radius:50%;}
+  .tb-dot.r{background:#FF5F57;}.tb-dot.y{background:#FEBC2E;}.tb-dot.g{background:#28C840;}
+  .term-bar span{margin-left:12px;font-family:var(--mono);font-size:12px;color:var(--muted);}
+  .term-body{padding:26px 28px;font-family:var(--mono);font-size:14.5px;line-height:1.9;color:var(--muted);}
+  .term-body .cmd{color:var(--teal);}
+  .term-body .path{color:var(--amber);}
+  .term-body p{margin-bottom:6px;}
+  .term-body .out{color:var(--text);}
+
+  /* ---------- STACK / SKILLS ---------- */
+  .ps-table{
+    background:var(--bg-panel);border:1px solid var(--border);border-radius:10px;overflow:hidden;
+  }
+  .ps-row-head, .ps-row{
+    display:grid;grid-template-columns:2fr 1.4fr 3fr 1fr;
+    padding:14px 20px;align-items:center;gap:16px;
+  }
+  .ps-row-head{
+    font-family:var(--mono);font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:1px;
+    border-bottom:1px solid var(--border);
+  }
+  .ps-row{border-bottom:1px solid var(--border);font-family:var(--mono);font-size:13.5px;}
+  .ps-row:last-child{border-bottom:none;}
+  .ps-row:hover{background:rgba(45,212,191,0.03);}
+  .ps-name{color:var(--text);font-weight:600;}
+  .ps-status{color:var(--teal);font-size:12px;}
+  .ps-bar-track{height:6px;background:var(--bg);border-radius:4px;overflow:hidden;border:1px solid var(--border);}
+  .ps-bar-fill{height:100%;background:linear-gradient(90deg,var(--teal-dim),var(--teal));border-radius:4px;width:0%;transition:width 1.4s cubic-bezier(.2,.8,.2,1);}
+  .ps-pct{color:var(--muted);text-align:right;}
+  @media(max-width:640px){
+    .ps-row-head{display:none;}
+    .ps-row{grid-template-columns:1fr;gap:6px;}
+  }
+
+  /* ---------- PROJECTS (3D TILT) ---------- */
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
+  .tilt-card{
+    position:relative;
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:28px;
+    transform-style:preserve-3d;
+    transition:transform .1s ease-out, border-color .3s;
+    overflow:hidden;
+  }
+  .tilt-card:hover{border-color:var(--border-bright);}
+  .tilt-card::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%), rgba(45,212,191,0.08), transparent 60%);
+    opacity:0;transition:opacity .3s;pointer-events:none;
+  }
+  .tilt-card:hover::before{opacity:1;}
+  .tc-tag{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:1px;margin-bottom:14px;display:block;}
+  .tc-title{font-family:var(--mono);font-size:18px;font-weight:600;margin-bottom:12px;}
+  .tc-desc{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:18px;}
+  .tc-tools{display:flex;flex-wrap:wrap;gap:8px;}
+  .tc-tools span{
+    font-family:var(--mono);font-size:11px;color:var(--muted);
+    border:1px solid var(--border-bright);border-radius:5px;padding:4px 9px;
+  }
+
+  /* ---------- CERTS / PIPELINE ---------- */
+  .pipeline{display:flex;flex-direction:column;gap:0;}
+  .pl-stage{
+    display:flex;gap:22px;padding:24px 0;border-left:2px solid var(--border-bright);
+    padding-left:32px;position:relative;
+  }
+  .pl-stage:last-child{border-left:2px solid transparent;}
+  .pl-node{
+    position:absolute;left:-11px;top:24px;
+    width:20px;height:20px;border-radius:50%;
+    background:var(--bg-panel);border:2px solid var(--teal);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .pl-node::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--teal);}
+  .pl-content{flex:1;}
+  .pl-stage-label{font-family:var(--mono);font-size:11px;color:var(--muted2);letter-spacing:1px;margin-bottom:6px;}
+  .pl-title{font-family:var(--mono);font-size:16px;font-weight:600;color:var(--text);margin-bottom:6px;}
+  .pl-meta{font-size:13.5px;color:var(--muted);line-height:1.6;}
+  .pl-badge{
+    display:inline-block;margin-top:10px;font-family:var(--mono);font-size:11px;
+    color:var(--teal);border:1px solid var(--teal-dim);border-radius:5px;padding:3px 10px;
+    background:rgba(45,212,191,0.06);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-box{
+    background:var(--bg-panel);border:1px solid var(--border);border-radius:12px;
+    padding:44px;text-align:center;
+    background-image:radial-gradient(circle at 50% 0%, rgba(45,212,191,0.06), transparent 60%);
+  }
+  .contact-cmd{font-family:var(--mono);font-size:14px;color:var(--muted);margin-bottom:18px;}
+  .contact-cmd .k{color:var(--teal);}
+  .contact-title{font-family:var(--mono);font-size:28px;font-weight:700;margin-bottom:14px;}
+  .contact-sub{color:var(--muted);max-width:460px;margin:0 auto 30px;font-size:15px;line-height:1.6;}
+  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  footer{
+    text-align:center;padding:40px 6vw 60px;
+    font-family:var(--mono);font-size:12px;color:var(--muted2);
+    border-top:1px solid var(--border);margin-top:40px;
+  }
+  footer .heart{color:var(--amber);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">mk<span>_</span>@bhiwandi</div>
+  <div class="nav-links">
+    <a href="#about">whoami</a>
+    <a href="#stack">stack</a>
+    <a href="#projects">projects</a>
+    <a href="#certs">certs</a>
+    <a href="#contact">contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding-top:120px;">
+  <div class="hero-left">
+    <div class="term-tag"><span class="dot"></span> open to cloud / devops roles</div>
+    <h1 class="headline">
+      <span class="fn">$</span> <span class="name">Mansoori Mohd Kaif</span><br>
+      <span class="quote">— building infra, one apply at a time.</span>
+      <span class="cursor"></span>
+    </h1>
+    <p class="sub">
+      <b>Cloud & DevOps enthusiast</b> from Bhiwandi, Maharashtra. BSc IT graduate, AWS Cloud Practitioner
+      (92%, Grade A+), currently deep in <b>Terraform, Docker, Kubernetes & CI/CD</b> — learning infrastructure
+      by breaking it first, then fixing it properly.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://drive.google.com/file/d/1XMV6M5S3D-uvLLW2ay0rxaepDqQbqPBz/view?usp=sharing" target="_blank">↓ resume.pdf</a>
+      <a class="btn btn-outline" href="mailto:mansoorikaif365@gmail.com">✉ say hello</a>
+      <a class="btn btn-outline" href="https://linkedin.com/in/mohdkaifmansoori" target="_blank">in/ linkedin</a>
+    </div>
+    <div class="term-mini">
+      <span><span class="ok">✓</span> aws cloud practitioner — score 92% (grade A+)</span>
+      <span><span class="ok">✓</span> hands-on: ec2, s3, iam, vpc, docker, terraform</span>
+      <span><span class="ok">✓</span> fresher — not afraid of learning by doing</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="iso-wrap" id="isoWrap">
+      <div class="iso-stack" id="isoStack">
+        <div class="iso-layer l1"><span>TERRAFORM · IaC</span></div>
+        <div class="iso-layer l2"><span>DOCKER · CONTAINERS</span></div>
+        <div class="iso-layer l3"><span>KUBERNETES · EKS</span></div>
+        <div class="iso-layer l4"><span>AWS · EC2 / S3 / IAM</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-head reveal">
+    <span class="sec-num">01</span>
+    <span class="sec-title">whoami</span>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="term-window reveal">
+    <div class="term-bar">
+      <span class="tb-dot r"></span><span class="tb-dot y"></span><span class="tb-dot g"></span>
+      <span>bash — mk@bhiwandi: ~</span>
+    </div>
+    <div class="term-body">
+      <p><span class="cmd">$</span> cat about.txt</p>
+      <p class="out">BSc Information Technology — University of Mumbai (2025).</p>
+      <p class="out">AWS Certified Cloud Practitioner via Capgemini & AWS re/Start (EduBridge), Score 92%, Grade A+.</p>
+      <p class="out">Comfortable across Linux server administration, shell scripting, and Docker fundamentals.</p>
+      <p class="out">Currently in an active DevOps track: Terraform (Levels 1–4), Jenkins pipelines, Kubernetes on</p>
+      <p class="out">Minikube, GitHub Actions CI/CD, and Selenium automation — learning by building, not copying.</p>
+      <p>&nbsp;</p>
+      <p><span class="cmd">$</span> echo $LOOKING_FOR</p>
+      <p class="out"><span class="path">"Entry-level Cloud Support / DevOps Engineer role"</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack">
+  <div class="sec-head reveal">
+    <span class="sec-num">02</span>
+    <span class="sec-title">docker ps --skills</span>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="ps-table reveal" id="psTable">
+    <div class="ps-row-head">
+      <div>skill</div><div>category</div><div>proficiency</div><div>status</div>
+    </div>
+    <!-- rows injected by JS with data-pct -->
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-head reveal">
+    <span class="sec-num">03</span>
+    <span class="sec-title">featured builds</span>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="proj-grid">
+    <div class="tilt-card reveal">
+      <span class="tc-tag">// infra</span>
+      <div class="tc-title">Linux Server Setup & Management</div>
+      <p class="tc-desc">Launched an EC2 instance on AWS Free Tier, configured an Ubuntu server over SSH, and wrote Bash scripts to automate log cleanup and user management.</p>
+      <div class="tc-tools"><span>Ubuntu</span><span>AWS EC2</span><span>Shell Scripting</span><span>SSH</span></div>
+    </div>
+    <div class="tilt-card reveal">
+      <span class="tc-tag">// cloud</span>
+      <div class="tc-title">AWS Cloud Infrastructure — EC2, S3, IAM</div>
+      <p class="tc-desc">Configured an S3 bucket with access-control policies, set up least-privilege IAM roles, and built a custom VPC with Security Groups for an EC2-hosted web server.</p>
+      <div class="tc-tools"><span>AWS Free Tier</span><span>IAM</span><span>S3</span><span>VPC</span><span>Security Groups</span></div>
+    </div>
+    <div class="tilt-card reveal">
+      <span class="tc-tag">// in progress</span>
+      <div class="tc-title">Terraform + EKS Monitoring Pipeline</div>
+      <p class="tc-desc">Building a multi-file Terraform setup provisioning VPC + EKS via community modules, alongside a Jenkins monitoring stack on EC2 with CloudWatch and SNS alerting.</p>
+      <div class="tc-tools"><span>Terraform</span><span>EKS</span><span>CloudWatch</span><span>SNS</span><span>Jenkins</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section id="certs">
+  <div class="sec-head reveal">
+    <span class="sec-num">04</span>
+    <span class="sec-title">certification pipeline</span>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="pipeline reveal">
+    <div class="pl-stage">
+      <div class="pl-node"></div>
+      <div class="pl-content">
+        <div class="pl-stage-label">STAGE · JUN 2025</div>
+        <div class="pl-title">Networking 101: Network Essentials</div>
+        <div class="pl-meta">EduBridge</div>
+        <span class="pl-badge">✓ passed</span>
+      </div>
+    </div>
+    <div class="pl-stage">
+      <div class="pl-node"></div>
+      <div class="pl-content">
+        <div class="pl-stage-label">STAGE · JUL 2025</div>
+        <div class="pl-title">AWS Cloud Practitioner</div>
+        <div class="pl-meta">Capgemini & AWS re/Start, EduBridge — Score 92%, Grade A+</div>
+        <span class="pl-badge">✓ passed — A+</span>
+      </div>
+    </div>
+    <div class="pl-stage">
+      <div class="pl-node"></div>
+      <div class="pl-content">
+        <div class="pl-stage-label">STAGE · JAN–MAR 2026</div>
+        <div class="pl-title">Data Processing & Business Analysis</div>
+        <div class="pl-meta">Anudip Foundation / CitiusTech — 196 hrs, Grade A</div>
+        <span class="pl-badge">✓ passed — A</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-box reveal">
+    <div class="contact-cmd"><span class="k">$</span> curl -X POST /contact --data "lets-build-something-together"</div>
+    <div class="contact-title">Let's talk infra.</div>
+    <p class="contact-sub">Open to entry-level Cloud Support and DevOps Engineer roles. Reach out — happy to walk through any project on this page.</p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:mansoorikaif365@gmail.com">✉ mansoorikaif365@gmail.com</a>
+      <a class="btn btn-outline" href="https://linkedin.com/in/mohdkaifmansoori" target="_blank">in/mohdkaifmansoori</a>
+      <a class="btn btn-outline" href="https://github.com/Mohd-kaif123" target="_blank">↗ github.com/Mohd-kaif123</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  built with <span class="heart">♥</span> and a lot of terraform apply — © 2026 Mansoori Mohd Kaif
+</footer>
+
+<script>
+  // ---- Skills data (ps table rows) ----
+  const skills = [
+    ["AWS","Cloud",90],["Linux","OS",85],["Docker","Containers",78],
+    ["Terraform","IaC",70],["Kubernetes","Orchestration",60],
+    ["Jenkins","CI/CD",65],["Python","Language",75],
+    ["SQL","Database",72],["Git / GitHub","VCS",85],["Bash","Scripting",80]
+  ];
+  const table = document.getElementById('psTable');
+  skills.forEach(([name,cat,pct])=>{
+    const row = document.createElement('div');
+    row.className = 'ps-row';
+    row.innerHTML = `
+      <div class="ps-name">${name}</div>
+      <div class="ps-status">${cat}</div>
+      <div class="ps-bar-track"><div class="ps-bar-fill" data-pct="${pct}"></div></div>
+      <div class="ps-pct">${pct}%</div>
+    `;
+    table.appendChild(row);
+  });
+
+  // ---- Scroll reveal ----
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        if(e.target.id === 'psTable'){
+          document.querySelectorAll('.ps-bar-fill').forEach(bar=>{
+            bar.style.width = bar.dataset.pct + '%';
+          });
+        }
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  // ---- Isometric hero parallax ----
+  const isoWrap = document.getElementById('isoWrap');
+  const isoStack = document.getElementById('isoStack');
+  isoWrap.addEventListener('mousemove', (e)=>{
+    const r = isoWrap.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    isoStack.style.transform = `rotateX(${55 - y*20}deg) rotateZ(${45 + x*20}deg)`;
+  });
+  isoWrap.addEventListener('mouseleave', ()=>{
+    isoStack.style.transform = 'rotateX(55deg) rotateZ(45deg)';
+  });
+
+  // ---- Tilt cards ----
+  document.querySelectorAll('.tilt-card').forEach(card=>{
+    card.addEventListener('mousemove',(e)=>{
+      const r = card.getBoundingClientRect();
+      const x = e.clientX - r.left, y = e.clientY - r.top;
+      const cx = x - r.width/2, cy = y - r.height/2;
+      card.style.transform = `rotateX(${(-cy/18)}deg) rotateY(${(cx/18)}deg) translateZ(6px)`;
+      card.style.setProperty('--mx', x+'px');
+      card.style.setProperty('--my', y+'px');
+    });
+    card.addEventListener('mouseleave',()=>{
+      card.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0)';
+    });
+  });
+</script>
+
+</body>
+</html>
