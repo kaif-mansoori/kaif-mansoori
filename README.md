@@ -56,16 +56,23 @@
 ### 📊 GitHub Analytics
 
 <p align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=Mohd-kaif123&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&bg_color=0A0D12&title_color=2DD4BF&icon_color=2DD4BF&text_color=E8EDF2" />
-  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=Mohd-kaif123&theme=tokyonight&hide_border=true&background=0A0D12&stroke=2DD4BF&ring=2DD4BF&fire=F5A623&currStreakLabel=2DD4BF" />
+  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=Mohd-kaif123&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&bg_color=0A0D12&title_color=2DD4BF&icon_color=2DD4BF&text_color=E8EDF2&cache_seconds=1800" />
+  <img width="49%" src="https://streak-stats.demolab.com/?user=Mohd-kaif123&theme=tokyonight&hide_border=true&background=0A0D12&stroke=2DD4BF&ring=2DD4BF&fire=F5A623&currStreakLabel=2DD4BF" />
 </p>
 
 <p align="center">
-  <img width="60%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Mohd-kaif123&layout=compact&theme=tokyonight&hide_border=true&bg_color=0A0D12&title_color=2DD4BF&text_color=E8EDF2" />
+  <img width="60%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Mohd-kaif123&layout=compact&theme=tokyonight&hide_border=true&bg_color=0A0D12&title_color=2DD4BF&text_color=E8EDF2&cache_seconds=1800" />
 </p>
 
+> **Note:** Stats cards apne khud ke free Vercel instance se zyada reliable hote hain (guide neeche di hai) — public demo server kabhi-kabhi busy rehta hai.
+
+<br>
+
+<!-- ===================== CONTRIBUTION SNAKE ===================== -->
+### 🐍 Contribution Graph
+
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Mohd-kaif123&theme=tokyonight&no-frame=true&row=1&column=6&margin-w=8" />
+  <img src="https://raw.githubusercontent.com/Mohd-kaif123/Mohd-kaif123/output/github-contribution-grid-snake-dark.svg" />
 </p>
 
 <br>
