@@ -8,7 +8,7 @@
   <a href="mailto:mansoorikaif365@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
-  <a href="https://drive.google.com/file/d/1XMV6M5S3D-uvLLW2ay0rxaepDqQbqPBz/view?usp=sharing" target="_blank">
+  <a href="https://drive.google.com/file/d/11rYckkMlgI24jrkIZFt5xkFQ-nzInaiv/view?usp=sharing" target="_blank">
     <img src="https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logo=googledrive&logoColor=white" />
   </a>
   <a href="https://mohd-kaif123.github.io/" target="_blank">
