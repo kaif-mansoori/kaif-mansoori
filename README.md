@@ -1,6 +1,20 @@
-# Hi 👋, I'm Mansoori Mohd Kaif
+<h1 align="center">Hi 👋, I'm Mansoori Mohd Kaif</h1>
+<h3 align="center">Cloud Computing Enthusiast | AWS | Linux | Docker</h3>
 
-### Cloud Computing Enthusiast | AWS | Linux | Docker
+<p align="center">
+  <a href="https://linkedin.com/in/mohdkaifmansoori" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="mailto:mansoorikaif365@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  <a href="https://drive.google.com/file/d/11rYckkMlgI24jrkIZFt5xkFQ-nzInaiv/view?usp=sharing" target="_blank">
+    <img src="https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logo=googledrive&logoColor=white" />
+  </a>
+  <a href="https://mohd-kaif123.github.io/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-2DD4BF?style=for-the-badge&logo=vercel&logoColor=black" />
+  </a>
+</p>
 
 ---
 
@@ -17,10 +31,23 @@
 
 ### 🛠️ Tech Stack
 
-**Cloud & Infra:** AWS, Terraform, HashiCorp, Linux, Docker, Ubuntu
+### 🛠️ Tech Stack
 
-**Languages & Tools:** Python, SQL, Git, Bash, YAML, JSON
+**Cloud & Infra**
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-844FBA?style=for-the-badge&logo=terraform&logoColor=white)
+![HashiCorp](https://img.shields.io/badge/HashiCorp-000000?style=for-the-badge&logo=hashicorp&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 
+**Languages & Tools**
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![YAML](https://img.shields.io/badge/YAML-CB171E?style=for-the-badge&logo=yaml&logoColor=white)
+![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)
 ---
 
 ### 📌 Featured Projects
@@ -42,13 +69,20 @@ Configured an S3 bucket with access-control policies, set up IAM roles using lea
 
 ---
 
-### 📌 Previous GitHub account
-My earlier account (`Mohd-kaif123`) got locked due to a 2FA recovery issue and I no longer have access.
-Old repos & commit history: [github.com/Mohd-kaif123](https://github.com/Mohd-kaif123?tab=repositories)
+### 📊 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=kaif-mansoori&show_icons=true&theme=radical" alt="Kaif's GitHub Stats" height="165"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=kaif-mansoori&theme=radical" alt="Kaif's Streak" height="165"/>
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kaif-mansoori&layout=compact&theme=radical" alt="Top Languages" height="165"/>
+</p>
 
 ---
 
 ### 📫 Connect with me
-📧 mansoorikaif365@gmail.com | 🔗 [LinkedIn](https://linkedin.com/in/mohdkaifmansoori)
+📧 mansoorikaif365@gmail.com&nbsp; | &nbsp;🔗 [LinkedIn](https://linkedin.com/in/mohdkaifmansoori)
 
-*🌱 Fresher, but not afraid of learning by doing.*
+<p align="center"><i>🌱 Fresher, but not afraid of learning by doing.</i></p>
