@@ -34,6 +34,7 @@
 ### 🛠️ Tech Stack
 
 **Cloud & Infra**
+![Label](https://img.shields.io/badge/Label-COLOR?style=for-the-badge&logo=LOGO_NAME&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![Terraform](https://img.shields.io/badge/Terraform-844FBA?style=for-the-badge&logo=terraform&logoColor=white)
 ![HashiCorp](https://img.shields.io/badge/HashiCorp-000000?style=for-the-badge&logo=hashicorp&logoColor=white)
